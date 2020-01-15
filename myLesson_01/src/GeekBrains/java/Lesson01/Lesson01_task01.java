@@ -19,9 +19,9 @@ public class Lesson01_task01 {
         // Результат работы метода из пункта 6 Урока 1
         int intC = -5;
         if (GeekBrains.java.Lesson01.Lesson01_task06.isValueNegativ(intC))
-            System.out.println("Значение переменной intC отрицательное");
+           System.out.println("Значение переменной intC отрицательное");
         else
-            System.out.println("Значение переменной intC положительное");
+           System.out.println("Значение переменной intC положительное");
 
         // Результат работы метода из пункта 7 Урока 1
         GeekBrains.java.Lesson01.Lesson01_task07.printUserName("Дмитрий");
