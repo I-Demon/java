@@ -23,7 +23,6 @@ public class Lesson01_task01 {
         else
             System.out.println("Значение переменной intC положительное");
 
-
         // Результат работы метода из пункта 7 Урока 1
         GeekBrains.java.Lesson01.Lesson01_task07.printUserName("Дмитрий");
     }
