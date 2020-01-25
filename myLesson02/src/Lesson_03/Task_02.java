@@ -15,7 +15,7 @@ public class Task_02
 
         Random random = new Random();
 
-        int index  = random.nextInt(words.length-1);
+        int index  = random.nextInt(words.length);
         String gWord = words[index];
         guessWord(gWord);
 
