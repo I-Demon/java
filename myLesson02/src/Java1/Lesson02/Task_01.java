@@ -1,6 +1,5 @@
-package GeekBrains.java.Lesson02;
+package Java1.Lesson02;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Task_01 

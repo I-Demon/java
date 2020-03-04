@@ -1,4 +1,4 @@
-package GeekBrains.java.Lesson02;
+package Java1.Lesson02;
 
 public class Task_06
 {

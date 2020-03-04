@@ -1,4 +1,4 @@
-package Lesson_07;
+package Java1.Lesson_07;
 
 public class Plate {
     private int food;
