@@ -2,6 +2,7 @@ package Java2.Lesson01;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class MainCanvas extends JPanel {
 
@@ -35,5 +36,7 @@ public class MainCanvas extends JPanel {
     public int getTop() { return 0; }
     public int getBottom() { return getHeight() - 1; }
 
+    public void addAncestorListener(ActionListener нажата_кнопка) {
+    }
 }
 
