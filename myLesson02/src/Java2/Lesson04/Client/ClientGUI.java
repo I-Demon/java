@@ -77,7 +77,7 @@ public class ClientGUI extends JFrame implements ActionListener, Thread.Uncaught
         add(panelBottom, BorderLayout.SOUTH);
 
         addWindowListener(this);
-        
+
         setVisible(true);
     }
 
