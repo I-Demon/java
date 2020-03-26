@@ -4,14 +4,11 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.net.SocketTimeoutException;
 
 public class SocketThread extends Thread {
 
     private final Socket socket;
-    //private DataInputStream in;
     private DataOutputStream out;
-
     private SocketThreadListener listener;
 
     public SocketThread(SocketThreadListener listener, String name, Socket socket) {
@@ -29,12 +26,11 @@ public class SocketThread extends Thread {
             out = new DataOutputStream(socket.getOutputStream());
             listener.onSocketReady(this, socket);
             while (!isInterrupted()) {
-                    String msg = in.readUTF();
-                    listener.onReceiveString(this, socket, msg);
+                String msg = in.readUTF();
+                listener.onReceiveString(this, socket, msg);
             }
-
         } catch (IOException e) {
-           // listener.onSocketException(this, e);
+            listener.onSocketException(this, e);
         } finally {
             close();
             listener.onSocketStop(this);
@@ -62,4 +58,3 @@ public class SocketThread extends Thread {
         }
     }
 }
-
