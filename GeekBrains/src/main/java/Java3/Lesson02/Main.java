@@ -29,7 +29,7 @@ public class Main {
 
         delete(stmt, 7);    // Удаление записи с ID = 7
 
-        
+
         try {
             updatefromfile(stmt);           // обновление таблицы данными из файла
         } catch (FileNotFoundException e) {
