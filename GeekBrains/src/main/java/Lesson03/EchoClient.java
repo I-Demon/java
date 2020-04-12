@@ -19,7 +19,6 @@ public class EchoClient extends JFrame {
     private Socket socket;
     private ObjectInputStream in;
     private ObjectOutputStream out;
-    private ByteArrayOutputStream barrOut;
 
     public EchoClient() {
         try {
@@ -32,23 +31,21 @@ public class EchoClient extends JFrame {
 
     public void openConnection() throws IOException {
         socket = new Socket(SERVER_ADDR, SERVER_PORT);
-        in = new ObjectInputStream(socket.getInputStream());
         out = new ObjectOutputStream(socket.getOutputStream());
+        in = new ObjectInputStream(socket.getInputStream());
 
-        //barrOut = new ByteArrayOutputStream();
-        //out = new ObjectOutputStream(barrOut);
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     while (true) {
-                        //String strFromServer = in.readUTF();
-                        Cat catFormServer = (Cat)in.readObject();
 
-                        if (catFormServer.getName().equalsIgnoreCase("/end")) {
+                        Cat catFromServer = (Cat)in.readObject();
+
+                        if (catFromServer.getName().equalsIgnoreCase("/end")) {
                             break;
                         }
-                        chatArea.append(catFormServer.getName());
+                        chatArea.append(catFromServer.getName());
                         chatArea.append("\n");
                     }
                 } catch (Exception e) {
@@ -76,18 +73,18 @@ public class EchoClient extends JFrame {
         }
     }
 
-    public void sendMessage() {
-        if (!msgInputField.getText().trim().isEmpty()) {
-            try {
-                out.writeUTF(msgInputField.getText());
-                msgInputField.setText("");
-                msgInputField.grabFocus();
-            } catch (IOException e) {
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Ошибка отправки сообщения");
-            }
-        }
-    }
+//    public void sendMessage() {
+//        if (!msgInputField.getText().trim().isEmpty()) {
+//            try {
+//                out.writeUTF(msgInputField.getText());
+//                msgInputField.setText("");
+//                msgInputField.grabFocus();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//                JOptionPane.showMessageDialog(null, "Ошибка отправки сообщения");
+//            }
+//        }
+//    }
 
     public void sendObjectCat() {
         if (!msgInputField.getText().trim().isEmpty()) {
