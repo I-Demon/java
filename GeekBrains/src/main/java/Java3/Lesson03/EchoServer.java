@@ -1,8 +1,5 @@
-package Lesson03;
+package Java3.Lesson03;
 
-import Lesson03.Cat;
-
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;

@@ -1,4 +1,4 @@
-package Lesson03;
+package Java3.Lesson03;
 
 import java.io.Serializable;
 
